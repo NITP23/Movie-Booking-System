@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
 import { signUpStyles,signUpCSS } from '../assets/dummyStyles';
-import {toast, toastContainer} from 'react-toastify';
-import { ArrowLeft, Clapperboard, Eye, EyeOff, Mail, Ticket, User, } from 'lucide-react';
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ArrowLeft,Clapperboard,Eye,EyeOff,Mail,Ticket,User,Phone,Calendar,Lock,File} from 'lucide-react';
  
 const SignUpPage = () => {
 
@@ -328,9 +329,8 @@ const handleSubmit = (e) => {
                 </div>
             </div>
         </div>
-    </div>
-    
-    </div>
+    </div> 
+  </div>
   )
 }
 

@@ -162,7 +162,7 @@ const Navbar = () => {
                       </button>
                     ) : (
                       <a href="/login" className={navbarStyles.loginButton}>
-                        <user className={navbarStyles.authIcon} />
+                        <User className={navbarStyles.authIcon} />
                         <span>Login</span>
 
                         </a>
@@ -216,7 +216,7 @@ const Navbar = () => {
               </div>
             )}
         </div>
-        <style jsx> {navbarCSS} </style>
+        <style> {navbarCSS} </style>
     </nav>
   )
 }

@@ -232,7 +232,7 @@ export const contactStyles = {
   // Contact info styles
   contactInfo: "space-y-5",
   contactItem: "flex items-start group",
-  contactIconContainer: "bg-red-600 p-2 rounded-full mr-4 transition-transform",
+  contactIconContainer: "bg-600 p-2 rounded-full mr-4 transition-transform",
   contactIcon: "h-5 w-5",
   contactText: "text-lg font-semibold mb-1",
   contactDetail: "text-gray-300",

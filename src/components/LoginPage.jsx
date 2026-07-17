@@ -57,7 +57,7 @@ const handleSubmit = (e) => {
   };
 
   return (
-    <div className= {loginStyles.loginContainer}> 
+    <div className= {loginStyles.pageContainer}> 
         <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -89,7 +89,7 @@ const handleSubmit = (e) => {
                         </div>
                         <form onSubmit={handleSubmit}>
                             <div className= {loginStyles.inputGroup}>
-                                <label htmlFor="email" className= {loginStyles.inputLabel}>Email Address</label>
+                                <label htmlFor="email" className= {loginStyles.label}>Email Address</label>
                                 <div className= {loginStyles.inputContainer}>
                                     <input
                                         type="email"
@@ -122,12 +122,12 @@ const handleSubmit = (e) => {
                                         placeholder='Enter your password'
                                     />
                                     
-                                        <button type="button" onClick={() => setShowPassword(!showPassword)} >
+                                        <button type="button" className={loginStyles.passwordToggle} onClick={() => setShowPassword(!showPassword)} >
                                             {showPassword ? (<EyeOff size={18} className= {loginStyles.passwordToggleIcon} />) : (<Eye size={18} className= {loginStyles.passwordToggleIcon} />)}
                                         </button>
 
                                 </div>
-                            </div> 
+                            </div>
                                 <button type="submit" disabled ={isLoading} className= {`${loginStyles.submitButton} ${isLoading ? loginStyles.submitButtonDisabled : ''}`}>
                                     {isLoading ? (
                                         <div className= {loginStyles.buttonContent}>
@@ -147,7 +147,7 @@ const handleSubmit = (e) => {
                 </div>
 
                 <div className= {loginStyles.footerContainer}>
-                    <p className= {loginStyles.footerText}>Don't have an account?{""}
+                    <p className= {loginStyles.footerText}>Don't have an account?{" "}
                          <a href="/signup" className= {loginStyles.footerLink}>Create one Now
                          </a>
                     </p>
