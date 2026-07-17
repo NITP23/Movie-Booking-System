@@ -73,7 +73,7 @@ const LoginPage = () => {
             <div className="relative w-full max-w-md z-10">
                 <div className={loginStyles.backButtonContainer}>
                     <button onClick={goBack} className={loginStyles.backButton} >
-                        <ArrowLeft size={20} className={loginStyles.backButton} />
+                        <ArrowLeft size={20} className={loginStyles.backButtonIcon} />
                         <span className={loginStyles.backButtonText}>Back to Home</span>
                     </button>
                 </div>
