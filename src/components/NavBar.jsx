@@ -31,7 +31,9 @@ const Navbar = () => {
           setIsLoggedIn(Boolean(parsed?.isLoggedIn));
           setUserEmail(parsed?.email || "");
           return;
-        } catch (err) {}
+        } catch {
+          // ignore parsing error
+        }
       }
 
       const simpleFlag = localStorage.getItem("isLoggedIn");
@@ -172,8 +174,7 @@ const Navbar = () => {
                   </div>
 
                   <div className= {navbarStyles.mobileMenuToggle}>
-                    <button onClick={() => setIsMenuOpen
-                    ((s) => !s)}  className= {navbarStyles.mobileMenuButton}> {isMenuOpen ?(<X className = {navbarStyles.mobileMenuIcon}/>
+                    <button onClick={() => setIsMenuOpen((s) => !s)}  className= {navbarStyles.mobileMenuButton}> {isMenuOpen ?(<X className = {navbarStyles.mobileMenuIcon}/>
                     ) : (
                       <Menu className = {navbarStyles.mobileMenuIcon}/>)}
                       </button>

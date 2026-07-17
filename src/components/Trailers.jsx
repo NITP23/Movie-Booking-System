@@ -9,7 +9,7 @@ import { useEffect, useState, useRef } from 'react';
 const Trailers = () => {
     const [featuredTrailer, setFeaturedTrailer] = useState(trailersData[0]);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+
   const videoRef = useRef(null);
   const carouselRef = useRef(null);
 
@@ -42,7 +42,7 @@ useEffect(() => {
       if (videoRef.current) {
         videoRef.current.currentTime = 0;
       }
-    } catch (e) {
+    } catch {
       // ignore
     }
 
@@ -57,7 +57,7 @@ useEffect(() => {
           carouselRef.current.scrollBy({ left: offset, behavior: "smooth" });
         }
       }
-    } catch (e) {
+    } catch {
       // ignore
     }
   };
@@ -98,7 +98,7 @@ useEffect(() => {
 
       // fallback: return original (could already be an embed URL)
       return videoUrl;
-    } catch (e) {
+    } catch {
       // if URL constructor fails, return as-is
       return videoUrl || "";
     }
@@ -110,7 +110,7 @@ useEffect(() => {
     if (!base) return "";
     const sep = base.includes("?") ? "&" : "?";
     // add autoplay / mute / rel
-    return `${base}${sep}autoplay=1&mute=${isMuted ? 1 : 0}&rel=0`;
+    return `${base}${sep}autoplay=1&mute=0&rel=0`;
   };
 
 

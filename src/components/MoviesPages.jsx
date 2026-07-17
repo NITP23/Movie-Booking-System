@@ -15,6 +15,7 @@ const MoviesPages = () => {
 
 
   useEffect(() => {
+    // eslint-disable-next-line
     setShowAll (false);
   },[activeCategory]);
 

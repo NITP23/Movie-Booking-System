@@ -1,9 +1,17 @@
 import React,{useState} from 'react'
-import { signUpStyles,signUpCSS } from '../assets/dummyStyles';
+import { signUpStyles } from '../assets/dummyStyles';
 import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ArrowLeft,Clapperboard,Eye,EyeOff,Mail,Ticket,User,Phone,Calendar,Lock,File} from 'lucide-react';
  
+const RANDOM_PARTICLES = [...Array(15)].map((_, i) => ({
+  id: i,
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+  animationDelay: `${Math.random() * 5}s`,
+  animationDuration: `${3 + Math.random() * 4}s`,
+}));
+
 const SignUpPage = () => {
 
     const [formData, setFormData] = useState({
@@ -105,22 +113,23 @@ const handleSubmit = (e) => {
     }, 1500);
 };
 
+  const particles = RANDOM_PARTICLES;
+
   return (
     <div className={signUpStyles.container}>
       <div className={signUpStyles.particlesContainer}>
-        {
-    [...Array(15)].map((_, i) => (
-      <div
-        key={i}
-        className={signUpStyles.particle}
-        style={{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 5}s`,
-          animationDuration: `${3 + Math.random() * 4}s`,
-        }}
-      ></div>
-    ))}
+        {particles.map((p) => (
+          <div
+            key={p.id}
+            className={signUpStyles.particle}
+            style={{
+              left: p.left,
+              top: p.top,
+              animationDelay: p.animationDelay,
+              animationDuration: p.animationDuration,
+            }}
+          ></div>
+        ))}
         </div>
         <div className= {signUpStyles.gradientOrbs}>
             <div className= {signUpStyles.orb1}></div>
@@ -139,7 +148,7 @@ const handleSubmit = (e) => {
     theme="dark"
   />
     <div className={signUpStyles.mainContent}>
-        <button className={signUpStyles.backButton} >
+        <button className={signUpStyles.backButton} onClick={goBack}>
             <ArrowLeft size={20} className={signUpStyles.backIcon}/>
             <span className={signUpStyles.backText}>Back</span>
         </button>

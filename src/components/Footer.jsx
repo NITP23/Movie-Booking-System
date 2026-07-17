@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 
 const Footer = () => {
 
-    const currentYear = new Date().getFullYear();
     const [isVisible, setIsVisible] = useState(false);
 
     const scrollToTop = () => {
