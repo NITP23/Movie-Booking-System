@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom';
 import { loginStyles } from '../assets/dummyStyles';
 import { toast, ToastContainer } from 'react-toastify';
 import { ArrowLeft, Clapperboard, Popcorn, Film, Eye, EyeOff } from 'lucide-react';
 
 const LoginPage = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -46,14 +48,14 @@ const LoginPage = () => {
             }
             toast.success("Login successful! Redirecting...");
             setTimeout(() => {
-                window.location.href = '/';
+                navigate('/');
             }, 2000);
         }, 1500);
 
     };
 
     const goBack = () => {
-        window.history.back();
+        navigate(-1);
     };
 
     return (
@@ -148,8 +150,8 @@ const LoginPage = () => {
 
                 <div className={loginStyles.footerContainer}>
                     <p className={loginStyles.footerText}>Don't have an account?{" "}
-                        <a href="/signup" className={loginStyles.footerLink}>Create One Now
-                        </a>
+                        <Link to="/signup" className={loginStyles.footerLink}>Create One Now
+                        </Link>
                     </p>
                 </div>
             </div>

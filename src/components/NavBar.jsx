@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { navbarCSS, navbarStyles } from '../assets/dummyStyles';
 import { Clapperboard, Home, Film, Calendar, Mail, Ticket, User, LogOut, X, Menu } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 // import { X, Menu } from "lucide-react";
 // import { HiMenu, HiX } from "react-icons/hi";
 
@@ -12,6 +12,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState("");
   const menuRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () =>  setIsScrolled(window.scrollY > 10);
@@ -97,8 +98,7 @@ const Navbar = () => {
     localStorage.removeItem("userEmail");
     localStorage.removeItem("cine_user_email");
 
-    console.log("User logged out");
-    window.location.href = "/login";
+    navigate("/login");
   } catch (error) {
     console.error("Logout failed:", error);
   }
@@ -163,11 +163,10 @@ const Navbar = () => {
                         <span>Logout</span>
                       </button>
                     ) : (
-                      <a href="/login" className={navbarStyles.loginButton}>
+                      <Link to="/login" className={navbarStyles.loginButton}>
                         <User className={navbarStyles.authIcon} />
                         <span>Login</span>
-
-                        </a>
+                      </Link>
 
                       // <button onClick={handleLogIn} className={navbarStyles.loginButton}></button>
                     )}
@@ -207,10 +206,10 @@ const Navbar = () => {
                         Logout
                       </button>
                     ) : (
-                      <a href="/login" className={navbarStyles.mobileLoginButton} onClick={() => setIsMenuOpen(false)}>
+                      <Link to="/login" className={navbarStyles.mobileLoginButton} onClick={() => setIsMenuOpen(false)}>
                         <User className={navbarStyles.mobileAuthIcon} />
                         <span>Login</span>
-                      </a>
+                      </Link>
                     )}
                     </div>
                 </div>

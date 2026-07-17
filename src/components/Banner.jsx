@@ -2,6 +2,7 @@ import React from 'react'
 import { bannerStyles } from '../assets/dummyStyles';
 import { Info, Star, Tickets } from 'lucide-react';
 import video from '../assets/MovieBannerVideo.mp4';
+import { Link } from 'react-router-dom';
 
 
 function Banner() {
@@ -44,13 +45,13 @@ function Banner() {
                     </div>
 
                     <div className= {bannerStyles.buttonsContainer}>
-                        <a href="/movies" className= {bannerStyles.bookButton}>
+                        <Link to="/movies" className= {bannerStyles.bookButton}>
                         <Tickets className = {bannerStyles.icon} fill = "white"/>
                         Book Movies
-                        </a>
-                        <a href="/contact" className= {bannerStyles.infoButton}>
+                        </Link>
+                        <Link to="/contact" className= {bannerStyles.infoButton}>
                             <Info className = {bannerStyles.icon}/>More Info
-                        </a>
+                        </Link>
                     </div>
                 </div>
         </div>

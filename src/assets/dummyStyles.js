@@ -4,7 +4,7 @@ export const bannerStyles = {
   container: "relative overflow-hidden h-[640px] sm:h-[760px] md:h-screen",
   videoContainer: "absolute inset-0 z-0",
   video: "absolute inset-0 w-full h-full object-cover",
-  overlay: "absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60 md:bg-transparent",
+  overlay: "absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black md:bg-transparent",
   
   // Content styles
   content: "relative z-10 flex items-center justify-start h-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto",
@@ -24,8 +24,8 @@ export const bannerStyles = {
   
   // Button styles
   buttonsContainer: "flex flex-wrap gap-3 font-[pacifico]",
-  bookButton: "bg-red-600 cursor-pointer hover:bg-red-700 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full flex items-center transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl text-sm sm:text-base",
-  infoButton: "bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm px-4 sm:px-6 py-2.5 sm:py-3 rounded-full flex items-center transition-all duration-300 border border-white/30 text-sm sm:text-base",
+  bookButton: "bg-gradient-to-r from-red-600 to-red-800 cursor-pointer hover:from-red-500 hover:to-red-700 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full flex items-center transition-all duration-300 transform hover:-translate-y-1 shadow-[0_4px_14px_0_rgba(220,38,38,0.39)] hover:shadow-[0_6px_20px_rgba(220,38,38,0.23)] text-sm sm:text-base font-semibold",
+  infoButton: "bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl px-4 sm:px-6 py-2.5 sm:py-3 rounded-full flex items-center transition-all duration-300 border border-white/20 text-sm sm:text-base font-semibold hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]",
   
   // Icon styles
   icon: "h-4 w-4 sm:h-5 sm:w-5 mr-2",
@@ -48,8 +48,8 @@ export const navbarStyles = {
   // Main nav container
   nav: {
     base: "fixed left-4 right-4 top-6 z-50 transition-all duration-300",
-    scrolled: "py-3 bg-black/85 backdrop-blur-sm shadow-xl rounded-3xl",
-    notScrolled: "py-4 bg-black backdrop-blur-sm rounded-full"
+    scrolled: "py-3 bg-black/70 backdrop-blur-xl shadow-2xl shadow-black/50 rounded-3xl border border-white/5",
+    notScrolled: "py-4 bg-black/40 backdrop-blur-lg rounded-full border border-transparent"
   },
 
   // Layout
@@ -62,7 +62,7 @@ export const navbarStyles = {
   logoText: "text-lg md:text-sm xl:text-lg lg:tex-lg font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-200 font-[pacifico]",
 
   // Desktop navigation
-  desktopNav: "hidden lg:flex absolute left-1/2 transform -translate-x-1/2 z-10 items-center bg-black/70 backdrop-blur-md rounded-full px-3 py-2 gap-2 shadow-inner",
+  desktopNav: "hidden lg:flex absolute left-1/2 transform -translate-x-1/2 z-10 items-center bg-black/40 backdrop-blur-xl rounded-full px-3 py-2 gap-2 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] border border-white/10",
   desktopNavItems: "flex gap-2 items-center",
   desktopNavItem: "relative group",
   desktopNavLink: {
@@ -88,15 +88,15 @@ export const navbarStyles = {
   // Auth section
   authSection: "flex items-center gap-2",
   desktopAuth: "hidden md:block",
-  logoutButton: "flex items-center gap-2 md:px-1.5 px-4 lg:px-4 xl:px-4  py-2 rounded-full bg-gradient-to-r from-gray-700 to-gray-800 text-white text-sm font-semibold border border-red-600/20",
-  loginButton: "flex items-center gap-2 px-4 py-2 md:px-1.5 lg:px-4 xl:px-4 rounded-full bg-gradient-to-r from-red-300 to-red-700 text-white text-sm font-semibold border border-red-600/20",
+  logoutButton: "flex items-center gap-2 md:px-1.5 px-4 lg:px-4 xl:px-4 py-2 rounded-full bg-gradient-to-r from-gray-700 to-gray-800 text-white text-sm font-semibold border border-red-600/20 hover:scale-105 transition-transform duration-300",
+  loginButton: "flex items-center gap-2 px-4 py-2 md:px-1.5 lg:px-4 xl:px-4 rounded-full bg-gradient-to-r from-red-600 to-red-800 text-white text-sm font-semibold border border-red-500/30 hover:scale-105 hover:shadow-[0_4px_14px_0_rgba(220,38,38,0.39)] transition-all duration-300",
   authIcon: "h-4 w-4",
 
   // Mobile menu
   mobileMenuToggle: "md:hidden",
   mobileMenuButton: "p-2 rounded-full bg-black/60 text-gray-200 hover:text-red-400",
   mobileMenuIcon: "h-6 w-6",
-  mobileMenuPanel: "md:hidden absolute left-4 right-4 top-full mt-6 bg-black backdrop-blur-md rounded-2xl p-4 shadow-xl",
+  mobileMenuPanel: "md:hidden absolute left-4 right-4 top-full mt-6 bg-black/85 backdrop-blur-2xl rounded-2xl p-4 shadow-2xl border border-white/10",
   mobileMenuItems: "flex flex-col gap-2",
   mobileNavLink: {
     base: "flex items-center gap-3 px-4 py-3 rounded-xl",

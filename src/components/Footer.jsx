@@ -2,6 +2,7 @@ import React from 'react'
 import { footerStyles } from '../assets/dummyStyles';
 import { ArrowUp,Clapperboard, Film, Star, Ticket, Popcorn, Mail, Phone, MapPin ,User,Facebook,Twitter,Instagram,Youtube} from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
@@ -115,10 +116,10 @@ const Footer = () => {
                 <ul className = {footerStyles.linkList}>
                     {links.map((link) => (
                         <li key = {link.href}>
-                            <a href = {link.href} className = {footerStyles.linkItem}>
-                                <span className = {footerStyles.linkDot}/>
+                            <Link to={link.href} className={footerStyles.linkItem}>
+                                <span className={footerStyles.linkDot}/>
                                 {link.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -132,10 +133,10 @@ const Footer = () => {
                 <ul className = {footerStyles.linkList}>
                     {genreLinks.map((link) => (
                         <li key = {link.label}>
-                            <a href = {link.href} className = {footerStyles.linkItem}>
-                                <span className = {footerStyles.linkDot}/>
+                            <Link to={link.href} className={footerStyles.linkItem}>
+                                <span className={footerStyles.linkDot}/>
                                 {link.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
